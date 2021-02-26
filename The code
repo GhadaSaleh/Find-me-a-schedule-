@@ -1,0 +1,96 @@
+#include<stdio.h>
+#include<math.h>
+
+int lol = 2;
+int f[10]={6,13 ,12,13 ,18,32,18,9};//4 controller
+int j[15]={7,14,16,9,14,20,6,12,15,6,8,14 }; //4 modern ((3)
+//electro  5
+int k[10]={8,21,21,31,20,27,20,26,13,24};
+//ADSP 5 ((3))
+int l[15]={25,26,27 ,30,32,25 ,13,21,31,15,21,27,26,32,31  };
+//cad 5 (3)
+int m[15]={18,19,20,6,7,8,24,25,26,3,4,5,0,1,2};
+//4 elec
+int n[10]={15,9 , 24,15 ,1,6,3,6 };
+
+void draw (int F,int J ,int K, int L, int M , int N)
+{
+     printf("***************** \n");
+
+for (int counteeroi=0; counteeroi<6; counteeroi++)
+{for (int counteeroj=0; counteeroj<6; counteeroj++)
+{
+        if (counteeroi==0&&counteeroj==0)printf("|    ||   1  ||   2  ||   3  ||   4  ||   5  ||   6  |\n");
+
+    if (counteeroj==0){
+     if (counteeroi==0)printf("|Sat |");
+    else if(counteeroi==1)printf("|Sun |");
+    else if(counteeroi==2)printf("|Mon |");
+    else if(counteeroi==3)printf("|Tues|");
+    else if(counteeroi==4)printf("|Wed |");
+    else if(counteeroi==5)printf("|Thrs|");}
+    
+    if (counteeroi*6+counteeroj== f[2*F]|| counteeroi*6+counteeroj== f[2*F+1]) printf("| mcro |");
+    else if (counteeroi*6+counteeroj== j[3*J]|| counteeroi*6+counteeroj== j[3*J+1]|| counteeroi*6+counteeroj== j[3*J+2]) printf("| mdrn |");
+    else if (counteeroi*6+counteeroj== k[2*K]|| counteeroi*6+counteeroj== k[2*K+1]) printf("| elct |");
+    else if (counteeroi*6+counteeroj== l[3*L]|| counteeroi*6+counteeroj== l[3*L+1]|| counteeroi*6+counteeroj== l[3*L+2]) printf("| ADSP |");
+
+    else if (counteeroi*6+counteeroj== m[3*M]|| counteeroi*6+counteeroj== m[3*M+1]|| counteeroi*6+counteeroj== m[3*M+2]) printf("| CAD= |");
+    else if (counteeroi*6+counteeroj== n[2*N]|| counteeroi*6+counteeroj== n[2*N+1]) printf("| 3ady |");
+    else  printf("|      |");
+}
+ printf("\n");
+}
+}
+int g[36]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int agaza=0;
+// 302333
+int main () {
+printf("3awz kam youm agaza 8er el gom3a?");
+scanf("%d",&lol);
+printf ("It will be on the same order \n heat, electronic , hydr , auto, op , Mech\n");
+
+// prog  f/ machine J/ electronics K/digitl L/ fkuid M /vibration N
+
+ //هنا بتحط الجدول بتاع الجامعة
+//yellow
+int X=0;
+int sum = 0;
+for (int F=0; F<4; F++){
+for (int J =0; J<4;J++){
+for (int K =0; K<5;K++){
+for (int L =0; L<5;L++){
+for (int M =0; M<5;M++) {
+for (int N =0; N<4;N++){
+  for (int he =0; he<36;he++){g[he]=0;}
+g[m[2*M]]++;    g[m[((2*M)+1)]]++; g[m[((3*M)+2)]]++;
+g[n[2*N]]++;    g[n[((2*N)+1)]]++;
+g[l[3*L]]++;    g[l[((3*L)+1)]]++;  g[l[((3*L)+2)]]++;
+g[j[3*J]]++;    g[j[((3*J)+1)]]++; g[j[((3*J)+2)]]++;
+g[k[2*K]]++;    g[k[((2*K)+1)]]++;
+g[f[2*F]]++;    g[f[((2*F)+1)]]++;
+agaza=0;
+sum=0;
+for (int ha =0; ha<36;ha++){
+//printf ("%d\n",g[ha]);
+if (g[ha]<2) {
+sum=sum+1;
+}
+// if (&&)
+}
+if (sum==36) {
+
+if (g[1]==0&&g[2]==0&&g[3]==0&&g[4]==0&&g[5]==0&&g[0]==0) {agaza++; }
+if (g[6]==0&&g[7]==0&&g[8]==0&&g[9]==0&&g[10]==0&&g[11]==0) {agaza++;}
+if (g[12]==0&&g[17]==0&&g[13]==0&&g[14]==0&&g[15]==0&&g[16]==0) {agaza++;}
+if (g[18]==0&&g[20]==0&&g[19]==0&&g[21]==0&&g[22]==0&&g[23]==0) {agaza++;}
+if (g[24]==0&&g[25]==0&&g[26]==0&&g[27]==0&&g[28]==0&&g[29]==0){ agaza++;}
+if (g[31]==0&&g[32]==0&&g[33]==0&&g[34]==0&&g[35]==0&&g[30]==0) {agaza++;}
+
+if (agaza==lol) {X++;
+                                        draw (F,J,K,L,M,N);
+                               // int g[36]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+printf (" (agaza %d days)\n %d%d%d%d%d%d\n",agaza,F+1,J+1,K+1,L+1,M+1,N+1);}
+}}}}}}}
+printf("%d gadwal ya 3m ;) ",X);
+}
